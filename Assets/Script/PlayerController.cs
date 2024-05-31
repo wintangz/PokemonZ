@@ -17,11 +17,12 @@ public class PlayerController : MonoBehaviour
 
     Vector2 movementInput;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+    private Vector2 lastInput;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        lastInput = Vector2.zero;
     }
 
     // Update is called once per frame
@@ -79,9 +80,20 @@ public class PlayerController : MonoBehaviour
     {
         if (movementInput != Vector2.zero)
         {
-            if (Mathf.Abs(movementInput.y) == 0)
+            // Track the last input direction
+            if (Mathf.Abs(movementInput.y) > Mathf.Abs(movementInput.x))
             {
-                if (movementInput.x > 0) // go right
+                lastInput = new Vector2(0, movementInput.y);
+            }
+            else
+            {
+                lastInput = new Vector2(movementInput.x, 0);
+            }
+
+            // Set animation based on the last input direction
+            if (Mathf.Abs(lastInput.y) == 0)
+            {
+                if (lastInput.x > 0) // go right
                 {
                     animator.SetInteger("isMoving", 4);
                 }
@@ -92,7 +104,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                if (movementInput.y > 0) // go up
+                if (lastInput.y > 0) // go up
                 {
                     animator.SetInteger("isMoving", 1);
                 }
@@ -106,5 +118,34 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetInteger("isMoving", 0);
         }
+        // if (movementInput != Vector2.zero)
+        // {
+        //     if (Mathf.Abs(movementInput.y) == 0)
+        //     {
+        //         if (movementInput.x > 0) // go right
+        //         {
+        //             animator.SetInteger("isMoving", 4);
+        //         }
+        //         else // go left
+        //         {
+        //             animator.SetInteger("isMoving", 3);
+        //         }
+        //     }
+        //     else
+        //     {
+        //         if (movementInput.y > 0) // go up
+        //         {
+        //             animator.SetInteger("isMoving", 1);
+        //         }
+        //         else // go down
+        //         {
+        //             animator.SetInteger("isMoving", 2);
+        //         }
+        //     }
+        // }
+        // else
+        // {
+        //     animator.SetInteger("isMoving", 0);
+        // }
     }
 }
