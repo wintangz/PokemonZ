@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18e983c3f7a84354689f86ef823fceba
-      internalID: 914284020
+      spriteID: c219781aafba4244f8dedaa692f384a6
+      internalID: -1782448348
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df0b05bdc90f3054d955db9a030de667
-      internalID: 40687452
+      spriteID: 6947cb56d4d135f47884c0f68152ca06
+      internalID: -191272472
       vertices: []
       indices: 
       edges: []
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14a3f966b243b7c4d9eb3aba369ac5f8
-      internalID: 931333748
+      spriteID: 449ba9d3c022c844b9af2c135dd1d7f3
+      internalID: 1935227634
       vertices: []
       indices: 
       edges: []
@@ -187,8 +187,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10d037cc3bcc3dc428d957ec584dc861
-      internalID: 1669341649
+      spriteID: de20cd855e1543e43bd9ecffc0470c6f
+      internalID: 1655516943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainScreen_4
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 240
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01594317b95733c42a6e2c901a98b58a
+      internalID: -1999703000
       vertices: []
       indices: 
       edges: []
@@ -204,10 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MainScreen_0: 914284020
-      MainScreen_1: 40687452
-      MainScreen_2: 931333748
-      MainScreen_3: 1669341649
+      MainScreen_0: -1782448348
+      MainScreen_1: -191272472
+      MainScreen_2: 1935227634
+      MainScreen_3: 1655516943
+      MainScreen_4: -1999703000
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

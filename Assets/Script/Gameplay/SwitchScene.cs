@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class SwitchScene : MonoBehaviour
 {
+    public string nextScene;
     public BoxCollider2D gate;
-    public BoxCollider2D player;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +24,6 @@ public class SwitchScene : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name == "Player")
-            SceneManager.LoadSceneAsync("Route01");
+            SceneManager.LoadSceneAsync(nextScene);
     }
 }
