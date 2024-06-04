@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public LayerMask encounterableLayer;
+
     public Rigidbody2D rb;
     public Animator animator;
     public SpriteRenderer sr;
@@ -46,6 +48,8 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
+        CheckForEncounters();
     }
 
     private bool TryMove(Vector2 direction)
@@ -80,6 +84,8 @@ public class PlayerController : MonoBehaviour
     {
         if (movementInput != Vector2.zero)
         {
+            if (movementInput.x != 0) movementInput.y = 0;
+
             // Track the last input direction
             if (Mathf.Abs(movementInput.y) > Mathf.Abs(movementInput.x))
             {
@@ -118,34 +124,16 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetInteger("isMoving", 0);
         }
-        // if (movementInput != Vector2.zero)
-        // {
-        //     if (Mathf.Abs(movementInput.y) == 0)
-        //     {
-        //         if (movementInput.x > 0) // go right
-        //         {
-        //             animator.SetInteger("isMoving", 4);
-        //         }
-        //         else // go left
-        //         {
-        //             animator.SetInteger("isMoving", 3);
-        //         }
-        //     }
-        //     else
-        //     {
-        //         if (movementInput.y > 0) // go up
-        //         {
-        //             animator.SetInteger("isMoving", 1);
-        //         }
-        //         else // go down
-        //         {
-        //             animator.SetInteger("isMoving", 2);
-        //         }
-        //     }
-        // }
-        // else
-        // {
-        //     animator.SetInteger("isMoving", 0);
-        // }
+    }
+
+    void CheckForEncounters()
+    {
+        if (Physics2D.OverlapCircle(transform.position, 0.2f, encounterableLayer) != null)
+        {
+            if (Random.Range(1, 10000) == 1)
+            {
+                Debug.Log("Encountered a pokemon");
+            }
+        }
     }
 }

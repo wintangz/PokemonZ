@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 8b0dc772b4c012d4da33f7eff034ff05
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: ea9a21d53e4c2e540bc9e679c8cb6a1e
+  - enabled: 1
     path: Assets/Scenes/PalletTown.unity
     guid: 1f4278540791cc649a08ed00e6710acc
   - enabled: 1

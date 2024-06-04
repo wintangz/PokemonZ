@@ -243,7 +243,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 753266212}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
@@ -510,6 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9ba986ea71ea843b960dae5dfa93fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1166407645}
 --- !u!1 &1166407640
 GameObject:
   m_ObjectHideFlags: 0
