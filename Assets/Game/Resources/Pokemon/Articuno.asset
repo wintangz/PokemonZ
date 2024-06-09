@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8fec2130abb8d43ad025391eee6e44, type: 3}
   m_Name: Articuno
   m_EditorClassIdentifier: 
-  frontSprite: {fileID: 0}
-  backSprite: {fileID: 0}
+  frontSprite: {fileID: 353120785, guid: 7efa1ade1202092458718d5439131a77, type: 3}
+  backSprite: {fileID: -1521688818, guid: 7efa1ade1202092458718d5439131a77, type: 3}
   number: 144
   pokemonName: Articuno
-  type1: 5
-  type2: 9
+  type1: 6
+  type2: 10
   maxHp: 90
   attack: 85
   defense: 100

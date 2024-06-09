@@ -23,6 +23,8 @@ public class BattleUnit : MonoBehaviour
         {
             GetComponent<Image>().sprite = Pokemon.Base.FrontSprite;
         }
+
+        GetComponent<Image>().SetNativeSize();
     }
 
     // Start is called before the first frame update

@@ -16,8 +16,8 @@ MonoBehaviour:
   backSprite: {fileID: 0}
   number: 149
   pokemonName: Dragonite
-  type1: 14
-  type2: 9
+  type1: 15
+  type2: 10
   maxHp: 91
   attack: 134
   defense: 95

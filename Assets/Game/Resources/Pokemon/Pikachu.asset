@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8fec2130abb8d43ad025391eee6e44, type: 3}
   m_Name: Pikachu
   m_EditorClassIdentifier: 
-  frontSprite: {fileID: -734470887, guid: 7efa1ade1202092458718d5439131a77, type: 3}
-  backSprite: {fileID: 571670602, guid: 7efa1ade1202092458718d5439131a77, type: 3}
+  frontSprite: {fileID: 1840287833, guid: 7efa1ade1202092458718d5439131a77, type: 3}
+  backSprite: {fileID: -178199225, guid: 7efa1ade1202092458718d5439131a77, type: 3}
   number: 25
   pokemonName: Pikachu
-  type1: 3
-  type2: 18
+  type1: 4
+  type2: 0
   maxHp: 35
   attack: 55
   defense: 40

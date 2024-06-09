@@ -16,7 +16,7 @@ MonoBehaviour:
   description: 'The user growls in a cute way, making the foe lower its ATTACK stat.
 
 '
-  type: 0
+  type: 1
   power: 0
   accuracy: 100
   pp: 40

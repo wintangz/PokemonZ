@@ -16,8 +16,8 @@ MonoBehaviour:
   backSprite: {fileID: 0}
   number: 150
   pokemonName: Mewtwo
-  type1: 10
-  type2: 18
+  type1: 11
+  type2: 0
   maxHp: 106
   attack: 110
   defense: 90

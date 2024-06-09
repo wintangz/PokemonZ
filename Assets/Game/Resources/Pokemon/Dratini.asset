@@ -16,8 +16,8 @@ MonoBehaviour:
   backSprite: {fileID: 0}
   number: 147
   pokemonName: Dratini
-  type1: 14
-  type2: 18
+  type1: 15
+  type2: 0
   maxHp: 41
   attack: 64
   defense: 45

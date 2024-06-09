@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: Growth
   description: "The user\u2019s body is forced to grow, raising the SP. ATK stat.\r"
-  type: 0
+  type: 1
   power: 0
   accuracy: 0
   pp: 20

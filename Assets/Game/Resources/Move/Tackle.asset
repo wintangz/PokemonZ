@@ -17,7 +17,7 @@ MonoBehaviour:
     foe.
 
 '
-  type: 0
+  type: 1
   power: 40
   accuracy: 100
   pp: 35

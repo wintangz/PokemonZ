@@ -16,8 +16,8 @@ MonoBehaviour:
   backSprite: {fileID: 0}
   number: 146
   pokemonName: Moltres
-  type1: 1
-  type2: 9
+  type1: 2
+  type2: 10
   maxHp: 90
   attack: 100
   defense: 90

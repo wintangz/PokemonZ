@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8fec2130abb8d43ad025391eee6e44, type: 3}
   m_Name: Charmander
   m_EditorClassIdentifier: 
-  frontSprite: {fileID: -925198680, guid: 7efa1ade1202092458718d5439131a77, type: 3}
-  backSprite: {fileID: 69013568, guid: 7efa1ade1202092458718d5439131a77, type: 3}
+  frontSprite: {fileID: -1810734499, guid: 7efa1ade1202092458718d5439131a77, type: 3}
+  backSprite: {fileID: 2099579060, guid: 7efa1ade1202092458718d5439131a77, type: 3}
   number: 4
   pokemonName: Charmander
-  type1: 1
-  type2: 18
+  type1: 2
+  type2: 0
   maxHp: 50
   attack: 0
   defense: 0

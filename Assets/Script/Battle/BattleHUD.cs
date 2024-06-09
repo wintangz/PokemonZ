@@ -16,7 +16,7 @@ public class BattleHUD : MonoBehaviour
         _pokemon = pokemon;
 
         nameText.text = pokemon.Base.PokemonName;
-        levelText.text = "Lvl" + pokemon.Level.ToString();
+        levelText.text = "Lv." + pokemon.Level.ToString();
         hpBar.SetHP((float)pokemon.HP / pokemon.MaxHp);
     }
 

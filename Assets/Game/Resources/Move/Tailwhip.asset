@@ -16,7 +16,7 @@ MonoBehaviour:
   description: 'The user wags its tail cutely, making the foe lower its DEFENSE stat.
 
 '
-  type: 0
+  type: 1
   power: 0
   accuracy: 100
   pp: 30

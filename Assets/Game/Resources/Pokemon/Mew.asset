@@ -16,8 +16,8 @@ MonoBehaviour:
   backSprite: {fileID: 0}
   number: 151
   pokemonName: Mew
-  type1: 10
-  type2: 18
+  type1: 11
+  type2: 0
   maxHp: 100
   attack: 100
   defense: 100

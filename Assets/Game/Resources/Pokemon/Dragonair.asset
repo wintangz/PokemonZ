@@ -16,8 +16,8 @@ MonoBehaviour:
   backSprite: {fileID: 0}
   number: 148
   pokemonName: Dragonair
-  type1: 14
-  type2: 18
+  type1: 15
+  type2: 0
   maxHp: 61
   attack: 84
   defense: 65
