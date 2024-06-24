@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Swift
   m_EditorClassIdentifier: 
   moveName: Swift
-  description: 
-  type: 0
-  power: 0
-  accuracy: 0
-  pp: 0
+  description: Ignores Accuracy and Evasiveness.
+  type: 1
+  power: 60
+  accuracy: 100
+  pp: 20

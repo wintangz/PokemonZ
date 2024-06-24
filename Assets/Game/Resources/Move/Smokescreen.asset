@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Smokescreen
   m_EditorClassIdentifier: 
   moveName: Smokescreen
-  description: 
-  type: 0
+  description: Lowers opponent's Accuracy.
+  type: 1
   power: 0
-  accuracy: 0
-  pp: 0
+  accuracy: 100
+  pp: 20

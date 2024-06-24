@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f0fc5ba58c76f4eac9b03798ae5c16, type: 3}
   m_Name: Stun Spore
   m_EditorClassIdentifier: 
-  moveName: 
-  description: 
-  type: 0
+  moveName: Stun Spore
+  description: Paralyzes opponent.
+  type: 5
   power: 0
-  accuracy: 0
-  pp: 0
+  accuracy: 75
+  pp: 30

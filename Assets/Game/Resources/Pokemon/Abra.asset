@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a8fec2130abb8d43ad025391eee6e44, type: 3}
+  m_Name: Abra
+  m_EditorClassIdentifier: 
+  frontSprite: {fileID: 2099813760, guid: 7efa1ade1202092458718d5439131a77, type: 3}
+  backSprite: {fileID: 447095578, guid: 7efa1ade1202092458718d5439131a77, type: 3}
+  number: 63
+  pokemonName: Abra
+  type1: 11
+  type2: 0
+  maxHp: 25
+  attack: 20
+  defense: 15
+  specialAttack: 105
+  specialDefense: 55
+  speed: 90
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: dda4ba6a20b7e8a4b8f8c51dca34b118, type: 2}
+    level: 0

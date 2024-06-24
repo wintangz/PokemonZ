@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f0fc5ba58c76f4eac9b03798ae5c16, type: 3}
   m_Name: Sky Attack
   m_EditorClassIdentifier: 
-  moveName: 
-  description: 
-  type: 0
-  power: 0
-  accuracy: 0
-  pp: 0
+  moveName: Sky Attack
+  description: Charges on first turn, attacks on second. May cause flinching. High
+    critical hit ratio.
+  type: 10
+  power: 140
+  accuracy: 90
+  pp: 5

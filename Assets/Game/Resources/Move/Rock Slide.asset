@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: Rock Slide
   description: May cause flinching.
-  type: 0
-  power: 0
-  accuracy: 0
-  pp: 0
+  type: 13
+  power: 75
+  accuracy: 90
+  pp: 10

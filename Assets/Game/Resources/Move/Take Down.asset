@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f0fc5ba58c76f4eac9b03798ae5c16, type: 3}
   m_Name: Take Down
   m_EditorClassIdentifier: 
-  moveName: 
-  description: 
-  type: 0
-  power: 0
-  accuracy: 0
-  pp: 0
+  moveName: Take Down
+  description: User receives recoil damage.
+  type: 1
+  power: 90
+  accuracy: 85
+  pp: 20

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f0fc5ba58c76f4eac9b03798ae5c16, type: 3}
   m_Name: Rock Throw
   m_EditorClassIdentifier: 
-  moveName: 
+  moveName: Rock Throw
   description: 
-  type: 0
-  power: 0
-  accuracy: 0
-  pp: 0
+  type: 13
+  power: 50
+  accuracy: 90
+  pp: 15
