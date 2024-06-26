@@ -6,6 +6,10 @@ public enum GameState { OpenWorld, Battle, Dialog }
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] PlayerController playerController;
+    [SerializeField] BattleSystem battleSystem;
+    [SerializeField] Camera worldCamera;
+
     GameState state;
 
     void Awake()
@@ -16,7 +20,24 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerController.OnEncountered += StartBattle;
+        battleSystem.OnBattleOver += EndBattle;
+    }
 
+    void StartBattle()
+    {
+        state = GameState.Battle;
+        battleSystem.gameObject.SetActive(true);
+        worldCamera.gameObject.SetActive(false);
+
+        battleSystem.StartBattle();
+    }
+
+    void EndBattle(bool won)
+    {
+        state = GameState.OpenWorld;
+        battleSystem.gameObject.SetActive(false);
+        worldCamera.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -24,11 +45,11 @@ public class GameController : MonoBehaviour
     {
         if (state == GameState.OpenWorld)
         {
-
+            playerController.HandleUpdate();
         }
         else if (state == GameState.Battle)
         {
-
+            battleSystem.HandleUpdate();
         }
         else if (state == GameState.Dialog)
         {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditorInternal;
@@ -13,18 +14,20 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] BattleHUD enemyHUD;
     [SerializeField] BattleDialogBox dialogBox;
 
+    public event Action<bool> OnBattleOver;
+
     BattleState state;
     int currentAction = 0;
     int currentMove = 0;
 
     // Start is called before the first frame update
-    void Start()
+    public void StartBattle()
     {
         StartCoroutine(SetupBattle());
     }
 
     // Update is called once per frame
-    void Update()
+    public void HandleUpdate()
     {
         if (state == BattleState.PlayerAction)
         {
@@ -90,8 +93,11 @@ public class BattleSystem : MonoBehaviour
             enemyUnit.PlayFaintAnimation();
             yield return new WaitForSeconds(1f);
 
-            state = BattleState.Start;
-            StartCoroutine(SetupBattle());
+            // state = BattleState.Start;
+            // StartCoroutine(SetupBattle());
+
+            yield return new WaitForSeconds(2f);
+            OnBattleOver(true);
         }
         else
         {
@@ -123,8 +129,11 @@ public class BattleSystem : MonoBehaviour
             playerUnit.PlayFaintAnimation();
             yield return new WaitForSeconds(1f);
 
-            state = BattleState.Start;
-            StartCoroutine(SetupBattle());
+            // state = BattleState.Start;
+            // StartCoroutine(SetupBattle());
+
+            yield return new WaitForSeconds(2f);
+            OnBattleOver(false);
         }
         else
         {

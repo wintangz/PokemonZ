@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public LayerMask encounterableLayer;
+
+    public event Action OnEncountered;
 
     public Rigidbody2D rb;
     public Animator animator;
@@ -28,7 +31,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void HandleUpdate()
     {
         xAxis = Input.GetAxisRaw("Horizontal");
         yAxis = Input.GetAxisRaw("Vertical");
@@ -130,9 +133,10 @@ public class PlayerController : MonoBehaviour
     {
         if (Physics2D.OverlapCircle(transform.position, 0.2f, encounterableLayer) != null)
         {
-            if (Random.Range(1, 10000) == 1)
+            if (UnityEngine.Random.Range(1, 6000) == 1)
             {
-                Debug.Log("Encountered a pokemon");
+                animator.SetInteger("isMoving", 0);
+                OnEncountered();
             }
         }
     }

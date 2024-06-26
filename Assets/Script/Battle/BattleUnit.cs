@@ -37,6 +37,7 @@ public class BattleUnit : MonoBehaviour
         }
 
         GetComponent<Image>().SetNativeSize();
+        image.color = originColor;
         PlayEnterAnimation();
     }
 
