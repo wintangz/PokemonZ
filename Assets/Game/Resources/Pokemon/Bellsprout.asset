@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8fec2130abb8d43ad025391eee6e44, type: 3}
   m_Name: Bellsprout
   m_EditorClassIdentifier: 
-  frontSprite: {fileID: 0}
-  backSprite: {fileID: 0}
+  frontSprite: {fileID: -1320262435, guid: 7efa1ade1202092458718d5439131a77, type: 3}
+  backSprite: {fileID: -203736188, guid: 7efa1ade1202092458718d5439131a77, type: 3}
   number: 69
   pokemonName: Bellsprout
   type1: 5

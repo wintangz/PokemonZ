@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8fec2130abb8d43ad025391eee6e44, type: 3}
   m_Name: Hitmonchan
   m_EditorClassIdentifier: 
-  frontSprite: {fileID: 0}
-  backSprite: {fileID: 0}
+  frontSprite: {fileID: 2137539227, guid: 7efa1ade1202092458718d5439131a77, type: 3}
+  backSprite: {fileID: -1667825263, guid: 7efa1ade1202092458718d5439131a77, type: 3}
   number: 107
   pokemonName: Hitmonchan
   type1: 7

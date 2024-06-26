@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8fec2130abb8d43ad025391eee6e44, type: 3}
   m_Name: Nidorino
   m_EditorClassIdentifier: 
-  frontSprite: {fileID: -929718964, guid: 7efa1ade1202092458718d5439131a77, type: 3}
-  backSprite: {fileID: -1980216542, guid: 7efa1ade1202092458718d5439131a77, type: 3}
+  frontSprite: {fileID: -1499646900, guid: 7efa1ade1202092458718d5439131a77, type: 3}
+  backSprite: {fileID: 677286438, guid: 7efa1ade1202092458718d5439131a77, type: 3}
   number: 33
   pokemonName: Nidorino
   type1: 8

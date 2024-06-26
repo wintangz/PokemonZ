@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8fec2130abb8d43ad025391eee6e44, type: 3}
   m_Name: Aerodactyl
   m_EditorClassIdentifier: 
-  frontSprite: {fileID: 0}
-  backSprite: {fileID: 0}
+  frontSprite: {fileID: 684813461, guid: 7efa1ade1202092458718d5439131a77, type: 3}
+  backSprite: {fileID: 542800091, guid: 7efa1ade1202092458718d5439131a77, type: 3}
   number: 142
   pokemonName: Aerodactyl
   type1: 13
