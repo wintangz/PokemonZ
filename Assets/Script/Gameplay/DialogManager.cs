@@ -57,14 +57,17 @@ public class DialogManager : MonoBehaviour
     {
         isTyping = true;
         dialogText.text = "";
+        Debug.Log(dialog.ToCharArray().Length);
+
         foreach (var letter in dialog.ToCharArray())
         {
             dialogText.text += letter;
             if (!(letter.ToString() == " "))
             {
-                yield return new WaitForSeconds(1f / lettersPerSecond);
+              yield return new WaitForSeconds(1f / lettersPerSecond);
             }
         }
+        Debug.Log(dialogText.text);
         isTyping = false;
     }
 }

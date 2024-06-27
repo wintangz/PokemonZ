@@ -14,7 +14,6 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
-
     }
 
     // Start is called before the first frame update
@@ -22,6 +21,17 @@ public class GameController : MonoBehaviour
     {
         playerController.OnEncountered += StartBattle;
         battleSystem.OnBattleOver += EndBattle;
+
+        DialogManager.Instance.OnShowDialog += () =>
+        {
+            state = GameState.Dialog;
+        };
+
+        DialogManager.Instance.OnCloseDialog += () =>
+        {
+            if (state == GameState.Dialog) 
+            state = GameState.OpenWorld;
+        };
     }
 
     void StartBattle()

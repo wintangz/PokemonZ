@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public LayerMask encounterableLayer;
+    public LayerMask interactableLayer;
+    public LayerMask newLayer;
 
     public event Action OnEncountered;
 
@@ -53,8 +55,27 @@ public class PlayerController : MonoBehaviour
         }
 
         CheckForEncounters();
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            Interact();
+        }
     }
 
+    void Interact()
+    {
+        var facingDir = new Vector3(movementInput.x, movementInput.y);
+        var interactPos = transform.position + facingDir;
+
+        var collider = Physics2D.OverlapCircle(interactPos, 1f, interactableLayer);
+
+        if (collider != null) 
+        {
+            Debug.Log("Khac null");
+            collider.GetComponent<Interactable>()?.Interact();
+        }
+
+    }
     private bool TryMove(Vector2 direction)
     {
         if (movementInput == Vector2.zero)
