@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/NPCHouse1.unity
     guid: 289ae2ba3e21a25428289686578e0453
   - enabled: 1
+    path: Assets/Scenes/Lab.unity
+    guid: 07f45d4c4d9364b49ba277ea29985db8
+  - enabled: 1
     path: Assets/Scenes/Floor1.unity
     guid: 4a3d7b64db06be64db65f7a081f1d3e8
+  - enabled: 1
+    path: Assets/Scenes/NPCHouse2.unity
+    guid: 7501c437943d9914fac5a87e22e8bfe0
   m_configObjects: {}
