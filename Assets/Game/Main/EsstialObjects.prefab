@@ -189,9 +189,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -192, y: 76.15}
+  m_AnchoredPosition: {x: -191, y: 160.01001}
   m_SizeDelta: {x: 45, y: 32}
-  m_Pivot: {x: 0.5, y: -0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &5815022631030423153
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -242,9 +242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fda9330f9831594d9147fda3a12edfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _base: {fileID: 11400000, guid: 3ffd517b60b28ef4cb40e318d73f419c, type: 2}
-  level: 6
   isPlayerUnit: 1
+  initialPosition: {x: -189.1, y: -106, z: 0}
 --- !u!1 &550098339321003507
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,9 +911,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 201, y: 223}
+  m_AnchoredPosition: {x: 201, y: 310}
   m_SizeDelta: {x: 63, y: 58}
-  m_Pivot: {x: 0.5, y: -0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &5309115833054586218
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -965,9 +964,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fda9330f9831594d9147fda3a12edfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _base: {fileID: 11400000, guid: 99b9e8a1501cee44fae67e8741f7418a, type: 2}
-  level: 5
   isPlayerUnit: 0
+  initialPosition: {x: 189, y: 55, z: 0}
 --- !u!1 &3691863991418595633
 GameObject:
   m_ObjectHideFlags: 0
@@ -2668,19 +2666,44 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8670178426342431681, guid: 973ea2279259d6747abf714583136339, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7722359999943719895}
   m_SourcePrefab: {fileID: 100100000, guid: 973ea2279259d6747abf714583136339, type: 3}
 --- !u!4 &4823992699175835750 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8544122072994013120, guid: 973ea2279259d6747abf714583136339, type: 3}
   m_PrefabInstance: {fileID: 3774177070508525478}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5490516157988379751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8670178426342431681, guid: 973ea2279259d6747abf714583136339, type: 3}
+  m_PrefabInstance: {fileID: 3774177070508525478}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7722359999943719895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5490516157988379751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e94a2ab22bb6a4b965fbf5dc1080d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pokemons:
+  - _base: {fileID: 11400000, guid: 99b9e8a1501cee44fae67e8741f7418a, type: 2}
+    level: 3
+  - _base: {fileID: 11400000, guid: 3ffd517b60b28ef4cb40e318d73f419c, type: 2}
+    level: 3
 --- !u!114 &8725305464350071580 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -3641704437794628422, guid: 973ea2279259d6747abf714583136339, type: 3}
   m_PrefabInstance: {fileID: 3774177070508525478}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5490516157988379751}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed80154de31f4a34f9030a94f057786c, type: 3}

@@ -20,9 +20,14 @@ public class BattleSystem : MonoBehaviour
     int currentAction = 0;
     int currentMove = 0;
 
+    PokemonParty playerParty;
+    Pokemon wildPokemon;
+
     // Start is called before the first frame update
-    public void StartBattle()
+    public void StartBattle(PokemonParty playerParty, Pokemon wildPokemon)
     {
+        this.playerParty = playerParty;
+        this.wildPokemon = wildPokemon;
         StartCoroutine(SetupBattle());
     }
 
@@ -41,9 +46,9 @@ public class BattleSystem : MonoBehaviour
 
     public IEnumerator SetupBattle()
     {
-        playerUnit.Setup();
+        playerUnit.Setup(playerParty.GetHealthyPokemon());
         playerHUD.SetData(playerUnit.Pokemon);
-        enemyUnit.Setup();
+        enemyUnit.Setup(wildPokemon);
         enemyHUD.SetData(enemyUnit.Pokemon);
 
         dialogBox.SetMoveNames(playerUnit.Pokemon.Moves);
@@ -74,6 +79,9 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.Busy;
 
         var move = playerUnit.Pokemon.Moves[currentMove];
+
+        move.PP--;
+
         yield return dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.PokemonName} used {move.Base.MoveName}");
         yield return new WaitForSeconds(1f);
 
@@ -110,6 +118,9 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.EnemyMove;
 
         var move = enemyUnit.Pokemon.GetRandomMove();
+
+        move.PP--;
+
         yield return dialogBox.TypeDialog($"{enemyUnit.Pokemon.Base.PokemonName} used {move.Base.MoveName}");
         yield return new WaitForSeconds(1f);
 
@@ -133,7 +144,25 @@ public class BattleSystem : MonoBehaviour
             // StartCoroutine(SetupBattle());
 
             yield return new WaitForSeconds(2f);
-            OnBattleOver(false);
+
+            var nextPokemon = playerParty.GetHealthyPokemon();
+
+            if (nextPokemon != null)
+            {
+                playerUnit.Setup(nextPokemon);
+                playerHUD.SetData(nextPokemon);
+
+                dialogBox.SetMoveNames(nextPokemon.Moves);
+
+                yield return dialogBox.TypeDialog($"Go {nextPokemon.Base.PokemonName}.");
+                yield return new WaitForSeconds(1f);
+
+                PlayerAction();
+            }
+            else
+            {
+                OnBattleOver(false);
+            }
         }
         else
         {

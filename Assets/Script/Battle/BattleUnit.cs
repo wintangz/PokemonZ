@@ -6,9 +6,10 @@ using DG.Tweening;
 
 public class BattleUnit : MonoBehaviour
 {
-    [SerializeField] PokemonBase _base;
-    [SerializeField] int level;
+    // [SerializeField] PokemonBase _base;
+    // [SerializeField] int level;
     [SerializeField] bool isPlayerUnit;
+    [SerializeField] Vector3 initialPosition;
 
     Image image;
     Vector3 originPos;
@@ -19,13 +20,23 @@ public class BattleUnit : MonoBehaviour
     void Awake()
     {
         image = GetComponent<Image>();
-        originPos = image.transform.localPosition;
         originColor = image.color;
+        originPos = initialPosition;
     }
 
-    public void Setup()
+    void Start()
     {
-        Pokemon = new Pokemon(_base, level);
+    }
+
+    public void Setup(Pokemon pokemon)
+    {
+        Pokemon = pokemon;
+        Debug.Log($"{pokemon.Base.PokemonName} HP:{pokemon.HP}: {originPos.y}");
+
+        image.transform.localPosition = originPos;
+
+        // var newPos = new Vector3(originPos.x, originPos.y + 150f);
+        // originPos = newPos;
 
         if (isPlayerUnit)
         {
@@ -82,17 +93,5 @@ public class BattleUnit : MonoBehaviour
         var sequence = DOTween.Sequence();
         sequence.Append(image.transform.DOLocalMoveY(originPos.y - 150f, 0.5f));
         sequence.Join(image.DOFade(0f, 0.5f));
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
