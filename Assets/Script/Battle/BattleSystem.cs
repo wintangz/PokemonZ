@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEditorInternal;
 using UnityEngine;
 
-public enum BattleState { Start, PlayerAction, PlayerMove, EnemyMove, Busy }
+public enum BattleState { Start, PlayerAction, PlayerMove, EnemyMove, Busy, RunningTurn }
 
 public class BattleSystem : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] BattleUnit enemyUnit;
     [SerializeField] BattleHUD enemyHUD;
     [SerializeField] BattleDialogBox dialogBox;
+    [SerializeField] GameObject pokeballSprite;
 
     public event Action<bool> OnBattleOver;
 
@@ -232,6 +234,8 @@ public class BattleSystem : MonoBehaviour
             if (currentAction == 1)
             {
                 // Bag
+                dialogBox.EnableActionSelector(false);
+                StartCoroutine(ThrowPokeball());
             }
             if (currentAction == 2)
             {
@@ -275,5 +279,79 @@ public class BattleSystem : MonoBehaviour
             dialogBox.EnableDialogText(true);
             StartCoroutine(PerformPlayerMove());
         }
+    }
+
+    IEnumerator ThrowPokeball()
+    {
+        state = BattleState.Busy;
+
+        yield return dialogBox.TypeDialog($"You used a POKEBALL!");
+
+        var pokeballObject = Instantiate(pokeballSprite, playerUnit.transform.position - new Vector3(2, 0), Quaternion.identity);
+        var pokeball = pokeballObject.GetComponent<SpriteRenderer>();
+
+        // Animations
+        yield return pokeball.transform.DOJump(enemyUnit.transform.position + new Vector3(0, 2), 2f, 1, 1f).WaitForCompletion();
+        yield return enemyUnit.PlayCaptureAnimation();
+        yield return pokeball.transform.DOMoveY(enemyUnit.transform.position.y - 0.7f, 0.5f).WaitForCompletion();
+
+        int shakeCount = TryToCatchPokemon(enemyUnit.Pokemon);
+
+        for (int i = 0; i < Mathf.Min(shakeCount, 3); i++)
+        {
+            yield return new WaitForSeconds(0.5f);
+            yield return pokeball.transform.DOPunchRotation(new Vector3(0, 0, 10), 0.8f).WaitForCompletion();
+        }
+
+        if (shakeCount == 4)
+        {
+            yield return dialogBox.TypeDialog($"{enemyUnit.Pokemon.Base.PokemonName} was caught");
+            yield return pokeball.DOFade(0, 1.5f).WaitForCompletion();
+
+            playerParty.AddPokemon(enemyUnit.Pokemon);
+            yield return dialogBox.TypeDialog($"{enemyUnit.Pokemon.Base.PokemonName} has been added to your party");
+
+            Destroy(pokeball);
+            OnBattleOver(true);
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.5f);
+            pokeball.DOFade(0, 0.2f);
+            yield return enemyUnit.PlayBreakOutAnimation();
+
+            if (shakeCount < 2)
+                yield return dialogBox.TypeDialog($"{enemyUnit.Pokemon.Base.PokemonName} broke free");
+            else
+            {
+                yield return dialogBox.TypeDialog($"{enemyUnit.Pokemon.Base.PokemonName} escaped");
+            }
+
+            Destroy(pokeball);
+            state = BattleState.EnemyMove;
+            StartCoroutine(EnemyMove());
+        }
+    }
+
+    int TryToCatchPokemon(Pokemon pokemon)
+    {
+        float a = (3 * pokemon.MaxHp - 2 * pokemon.HP) * pokemon.Base.CatchRate / (3 * pokemon.MaxHp);
+
+        if (a > 255)
+        {
+            return 4;
+        }
+
+        float b = 1048560 / Mathf.Sqrt((float)Math.Sqrt(16711680 / a));
+
+        int shakeCount = 0;
+        while (shakeCount < 4)
+        {
+            if (UnityEngine.Random.Range(0, 65535) >= b)
+                break;
+            ++shakeCount;
+        }
+
+        return shakeCount;
     }
 }

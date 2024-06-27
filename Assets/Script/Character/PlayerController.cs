@@ -138,7 +138,7 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetInteger("isMoving", 0);
                 Debug.Log("Encountered");
-                // OnEncountered();
+                OnEncountered();
             }
         }
     }

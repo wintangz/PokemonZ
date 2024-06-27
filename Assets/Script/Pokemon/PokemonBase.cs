@@ -28,6 +28,8 @@ public class PokemonBase : ScriptableObject
 
     [SerializeField] int speed;
 
+    [SerializeField] int catchRate = 255;
+
     [SerializeField] List<LearnableMove> learnableMoves;
 
     public Sprite FrontSprite
@@ -94,6 +96,8 @@ public class PokemonBase : ScriptableObject
     {
         get { return learnableMoves; }
     }
+
+    public int CatchRate => catchRate;
 }
 
 [System.Serializable]
