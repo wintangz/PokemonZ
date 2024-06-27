@@ -131,12 +131,14 @@ public class PlayerController : MonoBehaviour
 
     void CheckForEncounters()
     {
-        if (Physics2D.OverlapCircle(transform.position, 0.2f, encounterableLayer) != null)
+        if (Physics2D.OverlapCircle(transform.position, 0.04f, encounterableLayer) != null)
         {
-            if (UnityEngine.Random.Range(1, 6000) == 1)
+            Debug.Log("Entered Long grass");
+            if (UnityEngine.Random.Range(1, 5000) == 1)
             {
                 animator.SetInteger("isMoving", 0);
-                OnEncountered();
+                Debug.Log("Encountered");
+                // OnEncountered();
             }
         }
     }
