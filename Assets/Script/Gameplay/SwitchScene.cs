@@ -62,4 +62,4 @@ public class SwitchScene : MonoBehaviour
     public Transform SpawnPoint => spawnPoint;
 }
 
-public enum DestinationIdentifier { A, B, C, D, E }
+public enum DestinationIdentifier { A, B, C, D, E, F }

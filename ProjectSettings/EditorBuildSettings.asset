@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PalletTown.unity
     guid: 1f4278540791cc649a08ed00e6710acc
   - enabled: 1
+    path: Assets/Scenes/PokemonCenter.unity
+    guid: 92b288cea5262b84d924264c0ea45e6e
+  - enabled: 1
     path: Assets/Scenes/Route01.unity
     guid: aae83511ce082814d88164049632a3ee
   - enabled: 1
@@ -29,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NPCHouse2.unity
     guid: 7501c437943d9914fac5a87e22e8bfe0
+  - enabled: 1
+    path: Assets/Scenes/PokeMart.unity
+    guid: d7a1e03a01451b647866cd38ec7aed38
+  - enabled: 1
+    path: Assets/Scenes/NPCHouse3.unity
+    guid: 64abfe9e26d0cd04ba48c3f4b354cf8a
   m_configObjects: {}
